@@ -23,11 +23,14 @@ public class Transporte {
 
 
   public void setCombustible(double nivel) {
-    if (nivel >= 0) {
-        this.combustible = nivel;
-    } else {
+    if (nivel < 0) {
         this.combustible = 0;
+    } else if (nivel > 100) {
+        this.combustible = 100;
+    } else {
+        this.combustible = nivel;
     }
+
     }
 
     public void setCapacidadCarga(double carga) {
